@@ -1,0 +1,14 @@
+name: Code Quality (Ruff & Mypy)
+
+on: [push, pull_request]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Run Ruff
+        run: uv run ruff check .
+      - name: Run Mypy
+        run: uv run mypy main.py
