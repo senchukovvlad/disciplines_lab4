@@ -24,7 +24,7 @@ def get_db_connection():
             cursor_factory=RealDictCursor,
         )
         return conn
-    except Exception as e:  # noqa: BLE001:
+    except Exception as e:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
 
 
