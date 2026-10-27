@@ -1,5 +1,4 @@
 import os
-from typing import List
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import psycopg2
@@ -25,7 +24,7 @@ def get_db_connection():
             cursor_factory=RealDictCursor,
         )
         return conn
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001:
         raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
 
 
