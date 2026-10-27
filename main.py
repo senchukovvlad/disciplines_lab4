@@ -39,7 +39,7 @@ def read_root():
     return {"message": "Disciplines API is running"}
 
 
-@app.get("/disciplines", response_model=List[dict])
+@app.get("/disciplines", response_model=list[dict])
 def get_disciplines():
     conn = get_db_connection()
     cursor = conn.cursor()
