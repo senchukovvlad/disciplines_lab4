@@ -1,8 +1,8 @@
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import psycopg2  # type: ignore[import-untyped]
+from psycopg2.extras import RealDictCursor  # type: ignore[import-untyped]
 
 app = FastAPI(title="Disciplines API")
 
